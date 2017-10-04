@@ -22,7 +22,7 @@ The median is (2 + 3)/2 = 2.5
 import unittest as ut
 
 
-def main():
+def main(nsx, nsy):
 	# SOLUTION
 	pass
 	
@@ -30,9 +30,18 @@ def main():
 class Tests (ut.TestCase):
 
 	def testA(self):
-		# GIVEN TEST
-		pass
+		ns1 = [1, 3]
+		ns2 = [2]
+		expected = 2.0
+		result = main(ns1, ns2)
+		self.assertEqual(result, expected)
 
-
+	def testB(self):
+		ns1 = [1, 2]
+		ns2 = [3, 4]
+		expected = 2.5
+		result = main(ns1, ns2)
+		self.assertEqual(result, expected)
+		
 if __name__ == '__main__':
 	ut.main()
