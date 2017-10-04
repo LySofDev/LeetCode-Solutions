@@ -9,7 +9,7 @@ def main():
 	pass
 	
 
-def Tests (ut.TestCase):
+class Tests (ut.TestCase):
 
 	def testA(self):
 		# GIVEN TEST
