@@ -67,6 +67,10 @@ def main(nsx, nsy):
 			# Set carry value to 0
 			carry = 0
 			
+	# Append carry to resulting list if value is greater than 0
+	if carry > 0:
+		nss.append(carry)
+			
 	# Return resulting list
 	return nss
 			
@@ -93,6 +97,14 @@ class Tests (ut.TestCase):
 		expected = [5, 4, 0, 5]
 		result = main(listA, listB)
 		self.assertEqual(result, expected)
+		
+	def testD(self):
+		listA = [9, 9]
+		listB = [1]
+		expected = [0, 0, 1]
+		result = main(listA, listB)
+		self.assertEqual(result, expected)
+		
 		
 if __name__ == '__main__':
 	ut.main()
