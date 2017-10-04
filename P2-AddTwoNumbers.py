@@ -34,7 +34,7 @@ def main(nsx, nsy):
 	# Set carry to 0
 	c = 0
 	
-	# Set sum list to empty list
+	# Set resulting sum list to empty list
 	nss = []
 	
 	# While numbers still exist in either list
