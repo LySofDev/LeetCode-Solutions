@@ -13,6 +13,13 @@ Output: 7 -> 0 -> 8
 import unittest as ut
 
 
+def get_greatest_length(listA, listB):
+	if len(listA) > len(listB):
+		return len(listA)
+	else:
+		return len(listB)
+
+
 def safely_get(numbers, index):
 	try:
 		return numbers[index]
@@ -21,12 +28,6 @@ def safely_get(numbers, index):
 
 
 def main(nsx, nsy):
-	# Set limit to length of longest list
-	if len(nsx) > len(nsy):
-		limit = len(nsx)
-	else:
-		limit = len(nsy)
-		
 	# Set index to 0
 	index = 0
 	
@@ -37,7 +38,7 @@ def main(nsx, nsy):
 	nss = []
 	
 	# While numbers still exist in either list
-	while index < limit:
+	while index < get_greatest_length(nsx, nsy):
 		
 		# Get digit by index or 0 if out of bounds
 		nx = safely_get(nsx, index)
