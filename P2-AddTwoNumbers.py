@@ -77,9 +77,22 @@ class Tests (ut.TestCase):
 		listA = [2, 4, 3]
 		listB = [5, 6, 4]
 		expected = [7, 0, 8]
-		solution = main(listA, listB)
-		self.assertEqual(solution, expected)
+		result = main(listA, listB)
+		self.assertEqual(result, expected)
 		
+	def testB(self):
+		listA = [2, 5, 9, 8]
+		listB = [3, 4]
+		expected = [5, 9, 9, 8]
+		result = main(listA, listB)
+		self.assertEqual(result, expected)
+		
+	def testC(self):
+		listA = [6, 2, 9]
+		listB = [9, 1, 1, 4]
+		expected = [5, 4, 0, 5]
+		result = main(listA, listB)
+		self.assertEqual(result, expected)
 		
 if __name__ == '__main__':
 	ut.main()
