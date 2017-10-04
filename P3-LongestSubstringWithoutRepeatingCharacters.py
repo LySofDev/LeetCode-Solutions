@@ -15,8 +15,37 @@ import unittest as ut
 
 
 def main(cs):
-	# SOLUTION
-	pass
+	# Set unique characters to empty list
+	ucs = []
+	
+	# Set resulting length to 0
+	rl = 0
+	
+	# Iterate over each character in string
+	for c in cs:
+		
+		# If character already in unique character list
+		if c in ucs:
+			
+			# If length of unique character list longer than current
+			# resulting length
+			if len(ucs) > rl:
+				
+				# Set resulting length to unique character list
+				rl = len(ucs)
+				
+			# Reset unique character list with current character
+			ucs = [c]
+			
+		# If character not included in unique character list
+		else:
+			
+			# Insert character into unique character list
+			ucs.append(c)
+	
+	# Return value of resulting length
+	return rl
+			
 	
 
 class Tests (ut.TestCase):
