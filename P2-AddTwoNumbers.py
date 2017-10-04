@@ -29,26 +29,26 @@ def safely_get(numbers, index):
 
 def main(nsx, nsy):
 	# Set index to 0
-	index = 0
+	i = 0
 	
 	# Set carry to 0
-	carry = 0
+	c = 0
 	
 	# Set sum list to empty list
 	nss = []
 	
 	# While numbers still exist in either list
-	while index < get_greatest_length(nsx, nsy):
+	while i < get_greatest_length(nsx, nsy):
 		
 		# Get digit by index or 0 if out of bounds
-		nx = safely_get(nsx, index)
-		ny = safely_get(nsy, index)
+		nx = safely_get(nsx, i)
+		ny = safely_get(nsy, i)
 		
 		# Increment index by 1
-		index += 1
+		i += 1
 		
 		# Get digit sum with carry
-		ns = nx + ny + carry
+		ns = nx + ny + c
 		
 		# If sum is two digits
 		if ns > 9:
@@ -57,7 +57,7 @@ def main(nsx, nsy):
 			nss.append(ns % 10)
 			
 			# Set first digit as carry value
-			carry = ns // 10
+			c = ns // 10
 			
 		# If sum is one digit
 		else:
@@ -66,11 +66,11 @@ def main(nsx, nsy):
 			nss.append(ns)
 			
 			# Set carry value to 0
-			carry = 0
+			c = 0
 			
 	# Append carry to resulting list if value is greater than 0
-	if carry > 0:
-		nss.append(carry)
+	if c > 0:
+		nss.append(c)
 			
 	# Return resulting list
 	return nss
