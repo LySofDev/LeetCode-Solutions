@@ -1,6 +1,5 @@
-# LeetCode
-## Problems and Solutions
+# LeetCode - Problems and Solutions
 ---
 
-### Problems:
+## Problems:
 1. [TwoSum](https://leetcode.com/problems/two-sum/description/)
