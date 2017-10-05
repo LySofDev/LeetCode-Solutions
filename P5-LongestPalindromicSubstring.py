@@ -21,8 +21,32 @@ import unittest as ut
 
 
 def main(cs):
-	# SOLUTION
-	pass
+	# Set first character index to 0
+	x = 0
+
+	# While at least two characters remain in string
+	while x < len(cs) - 1:
+
+		# Set last character index to last index in string
+		y = len(cs)
+
+		# While at least two characters remain between first and last
+		while (len(cs) - x) - (len(cs) - y) > 1:
+
+			# Get substring from characters
+			ss = cs[x:y]
+
+			# If substring has more than one character and is palindrome
+			if len(ss) > 1 and ss == ss[::-1]:
+
+				# Return current substring
+				return ss
+
+			# Increment last character index by 1
+			y -= 1
+
+		# Increment first character index by 1
+		x += 1
 
 
 class Tests (ut.TestCase):
