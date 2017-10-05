@@ -23,9 +23,30 @@ import unittest as ut
 
 
 def main(nsx, nsy):
-	# SOLUTION
-	pass
-	
+	# Merge both lists
+	nsm = nsx + nsy
+
+	# Sort merged list
+	nsm.sort()
+
+	# If length of merged list is odd
+	if len(nsm) % 2:
+
+		# Get index of middle value
+		i = int((len(nsm) - 1) / 2)
+
+		# Return middle value
+		return nsm[i]
+
+	# If length of merged list is even
+	else:
+
+		# Get index of smaller middle value
+		i = int(len(nsm) / 2)
+
+		# Return average of middle values
+		return (nsm[i - 1] + nsm[i]) / 2
+
 
 class Tests (ut.TestCase):
 
@@ -42,6 +63,7 @@ class Tests (ut.TestCase):
 		expected = 2.5
 		result = main(ns1, ns2)
 		self.assertEqual(result, expected)
-		
+
+
 if __name__ == '__main__':
 	ut.main()
