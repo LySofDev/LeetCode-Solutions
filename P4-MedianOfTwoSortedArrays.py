@@ -41,7 +41,7 @@ def main(nsx, nsy):
 	# If length of merged list is even
 	else:
 
-		# Get index of smaller middle value
+		# Get index of larger middle value
 		i = int(len(nsm) / 2)
 
 		# Return average of middle values
