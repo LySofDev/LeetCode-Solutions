@@ -20,7 +20,7 @@ Output: "bb"
 import unittest as ut
 
 
-def main():
+def main(cs):
 	# SOLUTION
 	pass
 
@@ -28,8 +28,16 @@ def main():
 class Tests (ut.TestCase):
 
 	def testA(self):
-		# GIVEN TEST
-		pass
+		string = "babad"
+		expected = "bab"
+		result = main(string)
+		self.assertEqual(expected, result)
+
+	def testB(self):
+		string = "cbbd"
+		expected = "bb"
+		result = main(string)
+		self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
