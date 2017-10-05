@@ -64,6 +64,13 @@ class Tests (ut.TestCase):
 		result = main(ns1, ns2)
 		self.assertEqual(result, expected)
 
+	def testC(self):
+		ns1 = [1, 5, 12, 16]
+		ns2 = [4, 8, 13, 18]
+		expected = 10.0
+		result = main(ns1, ns2)
+		self.assertEqual(result, expected)
+
 
 if __name__ == '__main__':
 	ut.main()
