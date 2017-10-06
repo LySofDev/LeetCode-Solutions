@@ -19,21 +19,69 @@ convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 import unittest as ut
 
 
-def main(cs, r):
-	# SOLUTION
+def safely_append_character(zz, cs, i):
+    try:
+        return zz + cs[i]
+    except IndexError:
+        return zz
 
-	pass
+
+def main(cs, rs):
+    # Initiate zigzag result to an empty string
+    zz = ""
+    
+    # Set step length to number of rows minus 1 times 2
+    x = (rs - 1) * 2
+    
+    # Iterate over each row
+    for r in range(rs):
+        
+        # Set character index to row
+        i = r
+        
+        # Set downwards step to step length minus current row times 2
+        y = x - 2 * r
+        
+        # Set upwards step to step length minus downward step
+        z = x - y
+        
+        # Append first character of row to resulting string
+        zz = safely_append_character(zz, cs, i)
+        
+        # While index is within bounds of given string
+        while i < len(cs):
+            
+            # If downwards step is greater than 0
+            if y > 0:
+                
+                # Increment index by downward step
+                i += y
+                
+                # Append character to resulting string
+                zz = safely_append_character(zz, cs, i)
+
+            # If upward step is greater than 0
+            if z > 0:
+                
+                # Increment index by upward step
+                i += z
+                
+                # Append character to resulting string
+                zz = safely_append_character(zz, cs, i)
+                
+    # Return resulting string
+    return zz
 
 
 class Tests (ut.TestCase):
 
-	def testA(self):
-		original = "PAYPALISHIRING"
-		rows = 3
-		expected = "PAHNAPLSIIGYIR"
-		result = main(original, rows)
-		self.assertEqual(expected, result)
+    def testA(self):
+        original = "PAYPALISHIRING"
+        rows = 3
+        expected = "PAHNAPLSIIGYIR"
+        result = main(original, rows)
+        self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
-	ut.main()
+    ut.main()
