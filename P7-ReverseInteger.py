@@ -16,26 +16,24 @@ import unittest as ut
 
 
 def main(x):
+	# Set copy of input to input
+	c = x
+	
 	# Initiate the result to 0
 	r = 0
 	
-	# Check if input is negative
-	n = x < 0
-	
-	# If input is negative
-	if n:
-		
-		# Set input to positive
-		x = -x
+	# Set copy to positive if input is negative
+	if x < 0:
+		c = -c
 	
 	# While original integer is not 0
-	while x:
+	while c:
 		
 		# Extract last digit
-		d = x % 10
+		d = c % 10
 		
 		# Remove last digit
-		x = x // 10
+		c = c // 10
 	
 		# Increase result by 10
 		r *= 10
@@ -43,10 +41,8 @@ def main(x):
 		# Append last digit to result
 		r += d
 		
-	# If input was negative
-	if n:
-		
-		# Set result to negative
+	# Set result to negative if input is negative
+	if x < 0:
 		r = -r
 		
 	# Return the result
