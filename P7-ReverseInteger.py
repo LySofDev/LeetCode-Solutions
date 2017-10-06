@@ -47,7 +47,50 @@ def main(x):
 		
 	# Return the result
 	return r
+	
 
+def copy(x):
+	return x
+	
+def zero():
+	return 0
+	
+def is_negative(x):
+	return x < 0
+	
+def negate(x):
+	return -x
+	
+def not_zero(x):
+	return x != 0
+	
+def get_last_digit(x):
+	return x % 10
+	
+def remove_last_digit(x):
+	return x // 10
+	
+def append_digit(r, d):
+	return r * 10 + d
+	
+	
+def verboseMain(original):
+	number = copy(original)
+	result = zero()
+	
+	if is_negative(original):
+		number = negate(number)
+		
+	while not_zero(number):
+		digit = get_last_digit(number)
+		number = remove_last_digit(number)
+		result = append_digit(result, digit)
+		
+	if is_negative(original):
+		result = negate(result)
+		
+	return result
+	
 
 class Tests (ut.TestCase):
 
@@ -62,6 +105,19 @@ class Tests (ut.TestCase):
 		expected = -321
 		result = main(x)
 		self.assertEqual(expected, result)
+		
+	def testC(self):
+		x = 123
+		expected = 321
+		result = verboseMain(x)
+		self.assertEqual(expected, result)
+	
+	def testD(self):
+		x = -123
+		expected = -321
+		result = verboseMain(x)
+		self.assertEqual(expected, result)
+		
 		
 
 if __name__ == '__main__':
