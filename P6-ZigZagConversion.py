@@ -81,6 +81,13 @@ class Tests (ut.TestCase):
         expected = "PAHNAPLSIIGYIR"
         result = main(original, rows)
         self.assertEqual(expected, result)
+        
+    def testB(self):
+        original = "THEQUICKBROWNFOX"
+        rows = 5
+        expected = "TBHKRXECOOQIWFUN"
+        result = main(original, rows)
+        self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
