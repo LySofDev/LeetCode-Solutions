@@ -5,16 +5,18 @@ import unittest as ut
 
 
 def main():
-	# SOLUTION
-	pass
-	
+    '''
+    return: None
+    '''
+    # SOLUTION
+    pass
+    
 
 class Tests (ut.TestCase):
-
-	def testA(self):
-		# GIVEN TEST
-		pass
+    def testA(self):
+        # GIVEN TEST
+        pass
 
 
 if __name__ == '__main__':
-	ut.main()
+    ut.main()
