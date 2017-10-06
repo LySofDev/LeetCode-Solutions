@@ -16,9 +16,42 @@ import unittest as ut
 
 
 def main(x):
-	# SOLUTION
-	pass
+	# Initiate the result to 0
+	r = 0
 	
+	# Check if input is negative
+	n = x < 0
+	
+	# If input is negative
+	if n:
+		
+		# Set input to positive
+		x = -x
+	
+	# While original integer is not 0
+	while x:
+		
+		# Extract last digit
+		d = x % 10
+		
+		# Remove last digit
+		x = x // 10
+	
+		# Increase result by 10
+		r *= 10
+		
+		# Append last digit to result
+		r += d
+		
+	# If input was negative
+	if n:
+		
+		# Set result to negative
+		r = -r
+		
+	# Return the result
+	return r
+
 
 class Tests (ut.TestCase):
 
