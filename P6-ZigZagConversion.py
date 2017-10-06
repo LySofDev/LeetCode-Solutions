@@ -36,7 +36,7 @@ def main(cs, rs):
     # Iterate over each row
     for r in range(rs):
         
-        # Set character index to row
+        # Set character index to current row
         i = r
         
         # Set downwards step to step length minus current row times 2
