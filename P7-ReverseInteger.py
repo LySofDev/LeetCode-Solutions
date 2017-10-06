@@ -29,17 +29,11 @@ def main(x):
 	# While original integer is not 0
 	while c:
 		
-		# Extract last digit
-		d = c % 10
+		# Append last digit to result
+		r = r * 10 + c % 10
 		
 		# Remove last digit
 		c = c // 10
-	
-		# Increase result by 10
-		r *= 10
-		
-		# Append last digit to result
-		r += d
 		
 	# Set result to negative if input is negative
 	if x < 0:
