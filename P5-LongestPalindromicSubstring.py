@@ -21,6 +21,10 @@ import unittest as ut
 
 
 def main(cs):
+	'''
+	cs: String -> Original text
+	return: String -> Longest, palindromic substring
+	'''
 	# Set first character index to 0
 	x = 0
 

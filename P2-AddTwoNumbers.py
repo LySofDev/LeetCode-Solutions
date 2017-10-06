@@ -15,14 +15,24 @@ Output: 7 -> 0 -> 8
 import unittest as ut
 
 
-def get_greatest_length(listA, listB):
-	if len(listA) > len(listB):
-		return len(listA)
+def get_greatest_length(xs, ys):
+	'''
+	xs: Object[] -> First list
+	ys: Object[] -> Second list
+	return: Integer -> Length of longest list
+	'''
+	if len(xs) > len(ys):
+		return len(xs)
 	else:
-		return len(listB)
+		return len(ys)
 
 
 def safely_get(numbers, index):
+	'''
+	numbers: Integer[] -> List of numbers
+	index: Integer -> Number index
+	return: Integer -> Number at index, or 0 if out of bounds
+	'''
 	try:
 		return numbers[index]
 	except IndexError:
@@ -30,6 +40,11 @@ def safely_get(numbers, index):
 
 
 def main(nsx, nsy):
+	'''
+	nsx: Integer[] -> First list of single digits
+	nsy: Integer[] -> Second list of single digits
+	return: Integer[] -> Sum of given lists as list of single digits
+	'''
 	# Set index to 0
 	i = 0
 	

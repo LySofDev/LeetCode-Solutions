@@ -16,6 +16,10 @@ import unittest as ut
 
 
 def main(x):
+	'''
+	x: Integer -> Original number
+	return: Integer -> Original number reversed
+	'''
 	# Set copy of input to input
 	c = x
 	
@@ -44,31 +48,66 @@ def main(x):
 	
 
 def copy(x):
+	'''
+	x: Integer -> Original value
+	return: Integer -> Copy of original value
+	'''
 	return x
 	
 def zero():
+	'''
+	return: Integer -> Literal zero
+	'''
 	return 0
 	
 def is_negative(x):
+	'''
+	x: Integer -> Number
+	return: Boolean -> True if negative, False otherwise
+	'''
 	return x < 0
 	
 def negate(x):
+	'''
+	x: Integer -> Number
+	return: Integer -> Negated number
+	'''
 	return -x
 	
 def not_zero(x):
+	'''
+	x: Integer -> Number
+	return: Boolean -> False if number is 0, True otherwise
+	'''
 	return x != 0
 	
 def get_last_digit(x):
+	'''
+	x: Integer -> Number
+	return: Integer -> Last digit of number
+	'''
 	return x % 10
 	
 def remove_last_digit(x):
+	'''
+	x: Integer -> Number
+	return: Integer -> Number without last digit
+	'''
 	return x // 10
 	
 def append_digit(r, d):
+	'''
+	r: Integer -> Resulting number
+	d: Integer -> Digit to append
+	'''
 	return r * 10 + d
 	
 	
 def verboseMain(original):
+	'''
+	original: Integer -> Original number
+	return: Integer -> Original number reversed
+	'''
 	number = copy(original)
 	result = zero()
 	

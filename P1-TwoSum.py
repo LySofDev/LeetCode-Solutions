@@ -11,6 +11,11 @@ import unittest as ut
 
 
 def main(numbers, target):
+	'''
+	numbers: Integer[] -> List of numbers
+	target: Integer -> Target sum
+	return: Integer[2] -> Indexes of numbers for sum
+	'''
 	# Set starting indexes
 	x, y = [0, 1]
 	

@@ -20,6 +20,12 @@ import unittest as ut
 
 
 def safely_append_character(zz, cs, i):
+    '''
+    zz: String -> Resulting text
+    cs: String -> Original text
+    i: Integer -> Character index
+    return: String -> Resulting text with the appended character
+    '''
     try:
         return zz + cs[i]
     except IndexError:
@@ -27,6 +33,11 @@ def safely_append_character(zz, cs, i):
 
 
 def main(cs, rs):
+    '''
+    cs: String -> Original text
+    rs: Integer -> Number of rows
+    return: String -> Original text zigzaged
+    '''
     # Initiate zigzag result to an empty string
     zz = ""
     

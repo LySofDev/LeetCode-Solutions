@@ -23,6 +23,11 @@ import unittest as ut
 
 
 def main(nsx, nsy):
+	'''
+	nxs: Integer[] -> First list of numbers
+	nsy: Integer[] -> Second list of numbers
+	return: Float -> Median for both lists
+	'''
 	# Merge both lists
 	nsm = nsx + nsy
 
