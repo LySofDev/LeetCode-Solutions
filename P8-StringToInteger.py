@@ -18,8 +18,34 @@ def main():
 class Tests (ut.TestCase):
 
 	def testA(self):
-		# GIVEN TEST
-		pass
+		s = "123"
+		expected = 123
+		result = main(s)
+		self.assertEqual(expected, result)
+		
+	def testB(self):
+		s = "-45"
+		expected = -45
+		result = main(s)
+		self.assertEqual(expected, result)
+		
+	def testC(self):
+		s = "   1000"
+		expected = 1000
+		result = main(s)
+		self.assertEqual(expected, result)
+		
+	def testD(self):
+		s = "152   "
+		expected = 152
+		result = main(s)
+		self.assertEqual(expected, result)
+		
+	def testE(self):
+		s = "fail"
+		expected = None
+		result = main(s)
+		self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
