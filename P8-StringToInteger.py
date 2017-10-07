@@ -10,7 +10,11 @@ Notes: It is intended for this problem to be specified vaguely (ie, no given inp
 import unittest as ut
 
 
-def main():
+def main(cs):
+	'''
+	cs: String -> Text representing an integer
+	return: Integer -> Number represented by text
+	'''
 	# SOLUTION
 	pass
 	
