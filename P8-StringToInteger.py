@@ -15,49 +15,76 @@ def main(cs):
 	cs: String -> Text representing an integer
 	return: Integer -> Number represented by text
 	'''
+	# Set resulting integer to 0
 	r = 0
+	
+	# Set negative? to False
 	n = False
+	
+	# Set started? to False
 	s = False
+	
+	# Set finished? to False
 	f = False
 	
+	# Iterate over each character in given string
 	for c in cs:
 		
+		# If character is negative symbol
 		if c == '-':
 			
+			# If started?
 			if s:
 				
+				# Error has ocurred during conversion
 				return 0
 				
+			# If not started?
 			else:
 				
+				# Set started? to True
 				s = True
 				
+				# Set negative? to True
 				n = True
 				
+		# If character is numeric
 		elif c.isnumeric():
 			
+			# If not started?
 			if not s:
 				
+				# Set started? to True
 				s = True
 				
+			# If finished?
 			if f:
 				
+				# Error has ocurred during conversion
 				return 0
 			
+			# Convert character to int and append to resulting integer
 			r = r * 10 + int(c)
 			
+		# If character is whitespace and started?
 		elif c == ' ' and s:
 			
+			# Set finished? to True
 			f = True
 			
+		# If character is not whitespace
 		elif c != ' ':
 			
+			# Error has ocurred during conversion
 			return 0
 			
+	# If negative?
 	if n:
 		
+		# Negate resulting integer
 		r = -r
 			
+	# Return resulting integer
 	return r
 			
 
