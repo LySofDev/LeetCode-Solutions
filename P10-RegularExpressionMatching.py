@@ -29,30 +29,46 @@ def main(cs, r):
 	r: String -> Regular expression to match
 	return: Boolean -> True if regular expression is matched in Original text
 	'''
-	# Set regex index to 0
-	ri = 0
+	# While both orignal text and regex still have characters
+	while len(cs) and len(r):
 
-	# While original text still has characters and regex index is in range
-	while len(cs) and len(r) > ri:
+		# Character matched if the first regex character matches the first
+		# character in the original text or the first regex character is .
+		cm = r[0] == cs[0] or r[0] == '.'
 
-		# If first character in original text match current regex character
-		if cs[0] == r[ri]:
+		# Multiple permited if another character remains in the regex and that
+		# character is *
+		mp = len(r) > 1 and r[1] == '*'
+
+		# if Character matched and multiple permited
+		if cm and mp:
 
 			# Remove first character from original text
 			cs = cs[1:]
 
-			# Increment regex index by 1
-			ri += 1
+		# If character matched but not multiple permited
+		elif cm and not mp:
 
-		# If first character in original text doesn't match current regex
-		# character
+			# Remove first character from original text
+			cs = cs[1:]
+
+			# Remove first character from regex
+			r = r[1:]
+
+		# If character not matched but multiple permited
+		elif not cm and mp:
+
+			# Remove first two characters from regex
+			r = r[2:]
+			
+		# If character not matched and multiple not permited
 		else:
 
+			# Original text doesn't match regex
 			return False
 
-	# If regex index is length of regex and original text is empty
-	return len(r) <= ri and not len(cs)
-
+	# Return true if no characters remain in original text
+	return not len(cs)
 
 
 class Tests (ut.TestCase):
