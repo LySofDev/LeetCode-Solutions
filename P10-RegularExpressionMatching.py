@@ -29,8 +29,41 @@ def main(cs, r):
 	r: String -> Regular expression to match
 	return: Boolean -> True if regular expression is matched in Original text
 	'''
-	# SOLUTION
-	pass
+	# Initiate string to match to empty string
+	ms = ""
+
+	# Set any? to False
+	a = False
+
+	# Set multiple? to False
+	m = False
+
+	# Iterate through regex characters
+	for c in r:
+
+		# If character is .
+		if c == ".":
+
+			# Set any? to True
+			a = True
+
+		# If character is *
+		elif c == "*":
+
+			# Set multiple? to True
+			m = True
+
+		# If character is any character
+		else:
+
+			# Append character to string to match
+			ms += c
+
+	# If exact match expected
+	if not a and not m:
+
+		# Check if exact match
+		return ms == cs
 
 
 class Tests (ut.TestCase):
