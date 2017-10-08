@@ -45,6 +45,18 @@ class Tests (ut.TestCase):
 		result = main(n)
 		self.assertEqual(expected, result)
 
+	def testD(self):
+		n = 5
+		expected = True
+		result = main(n)
+		self.assertEqual(expected, result)
+
+	def testE(self):
+		n = 9128
+		expected = False
+		result = main(n)
+		self.assertEqual(expected, result)
+
 
 if __name__ == '__main__':
 	ut.main()
