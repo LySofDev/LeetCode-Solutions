@@ -65,6 +65,18 @@ def main(cs, r):
 		# Check if exact match
 		return ms == cs
 
+	# If any character but not multiple
+	if a and not m:
+
+		# Check if length of regex is same as length of original text
+		return len(r) == len(cs)
+
+	# if any character and multiple
+	if a and m:
+
+		# Check if string to match is present as well
+		return ms in cs
+
 
 class Tests (ut.TestCase):
 
