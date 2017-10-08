@@ -29,24 +29,7 @@ def main(cs, r):
 	r: String -> Regular expression to match
 	return: Boolean -> True if regular expression is matched in Original text
 	'''
-	ms = r
-	m = False
-	a = False
-
-	if '*' in r:
-		m = True
-		ms = ms.split('*')[0]
-
-	if '.' in r:
-		a = True
-
-	if a and m:
-		return True
-
-	if not a and m:
-		return ms in cs
-
-	return cs == r
+	pass
 
 
 class Tests (ut.TestCase):
