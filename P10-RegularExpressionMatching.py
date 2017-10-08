@@ -29,53 +29,7 @@ def main(cs, r):
 	r: String -> Regular expression to match
 	return: Boolean -> True if regular expression is matched in Original text
 	'''
-	# Initiate string to match to empty string
-	ms = ""
-
-	# Set any? to False
-	a = False
-
-	# Set multiple? to False
-	m = False
-
-	# Iterate through regex characters
-	for c in r:
-
-		# If character is .
-		if c == ".":
-
-			# Set any? to True
-			a = True
-
-		# If character is *
-		elif c == "*":
-
-			# Set multiple? to True
-			m = True
-
-		# If character is any character
-		else:
-
-			# Append character to string to match
-			ms += c
-
-	# If exact match expected
-	if not a and not m:
-
-		# Check if exact match
-		return ms == cs
-
-	# If any character but not multiple
-	if a and not m:
-
-		# Check if length of regex is same as length of original text
-		return len(r) == len(cs)
-
-	# if any character and multiple
-	if a and m:
-
-		# Check if string to match is present as well
-		return ms in cs
+	pass
 
 
 class Tests (ut.TestCase):
@@ -122,9 +76,9 @@ class Tests (ut.TestCase):
 		result = main(string, regex)
 		self.assertEqual(expected, result)
 
-	def testE(self):
+	def testG(self):
 		string = "aab"
-		regex = "c*a*b*"
+		regex = "c*a*b"
 		expected = True
 		result = main(string, regex)
 		self.assertEqual(expected, result)
