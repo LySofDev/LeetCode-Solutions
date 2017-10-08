@@ -22,8 +22,27 @@ def main(n):
 	n: Integer -> Number to verify
 	return: Boolean -> True if palindrome, False otherwise
 	'''
-	# SOLUTION
-	pass
+	# Return false if number is negative
+	if n < 0:
+		return False
+
+	# Copy original number
+	c = n
+
+	# Initiate reversed number to 0
+	r = 0
+
+	# While copy of number still has digits
+	while c:
+
+		# Append last digit to reversed number
+		r = (r * 10) + (c % 10)
+
+		# Remove last digit from copy of number
+		c = c // 10
+
+	# Return true if reversed number is equal to original number
+	return n == r
 
 
 class Tests (ut.TestCase):
