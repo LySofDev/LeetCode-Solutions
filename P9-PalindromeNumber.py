@@ -77,6 +77,18 @@ class Tests (ut.TestCase):
 		result = main(n)
 		self.assertEqual(expected, result)
 
+	def testF(self):
+		n = 0
+		expected = True
+		result = main(n)
+		self.assertEqual(expected, result)
+
+	def testG(self):
+		n = -676
+		expected = False
+		result = main(n)
+		self.assertEqual(expected, result)
+
 
 if __name__ == '__main__':
 	ut.main()
