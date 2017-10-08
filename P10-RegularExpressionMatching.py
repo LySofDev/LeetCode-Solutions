@@ -29,7 +29,7 @@ def main(cs, r):
 	r: String -> Regular expression to match
 	return: Boolean -> True if regular expression is matched in Original text
 	'''
-	pass
+	return cs == r
 
 
 class Tests (ut.TestCase):
