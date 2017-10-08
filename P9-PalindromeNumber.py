@@ -17,9 +17,10 @@ There is a more generic way of solving this problem.
 import unittest as ut
 
 
-def main():
+def main(n):
 	'''
-	return: None
+	n: Integer -> Number to verify
+	return: Boolean -> True if palindrome, False otherwise
 	'''
 	# SOLUTION
 	pass
