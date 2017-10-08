@@ -29,6 +29,10 @@ def main(cs, r):
 	r: String -> Regular expression to match
 	return: Boolean -> True if regular expression is matched in Original text
 	'''
+	if '*' in r:
+		ms = r.split('*')[0]
+		return ms in cs
+	
 	return cs == r
 
 
