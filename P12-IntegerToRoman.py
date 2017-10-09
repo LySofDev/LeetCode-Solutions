@@ -8,9 +8,10 @@ Input is guaranteed to be within the range from 1 to 3999.
 import unittest as ut
 
 
-def main():
+def main(n):
 	'''
-	return: None
+	n: Integer -> Positive number to convert
+	return: String -> Roman numeral representing number
 	'''
 	# SOLUTION
 	pass
