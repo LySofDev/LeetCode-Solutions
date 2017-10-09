@@ -18,9 +18,21 @@ def main():
 
 class Tests (ut.TestCase):
 
-	def testA(self):
-		# GIVEN TEST
-		pass
+	def setUp(self):
+		self.numbers = [
+			1093, 282, 2471, 417, 3272, 477, 3643, 3771, 1019
+		]
+		self.expected = [
+			"MXCIII", "CCLXXXII", "MMCDLXXI", "CDXVII", "MMMCCLXXII",
+			"CDLXXVII", "MMMDCXLIII", "MMMDCCLXXI", "MXIX"
+		]
+
+	def testAll(self):
+		for i in range(len(self.numbers)):
+			number = self.numbers[i]
+			expected = self.expected[i]
+			result = main(number)
+			self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
