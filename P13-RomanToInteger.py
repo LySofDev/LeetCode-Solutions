@@ -8,13 +8,47 @@ Input is guaranteed to be within the range from 1 to 3999.
 import unittest as ut
 
 
-def main():
+def main(rn):
 	'''
 	rn: String -> Roman numeral
 	return: Integer -> Number represented by roman numeral
 	'''
-	# SOLUTION
-	pass
+	# Initiate index for roman numerals
+	ns = [
+		1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1
+	]
+
+	# Initiate roman numerals
+	rns = [
+		"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
+	]
+
+	# Initialize resulting number to 0
+	n = 0
+
+	# Initialize the index to 0
+	i = 0
+
+	# While the index is less than the length of the roman numerl letters
+	while i < len(rns):
+
+		# If given roman numeral starts with letter
+		if rn.startswith(rns[i]):
+
+			# Add the value of the letter to the resulting number
+			n += ns[i]
+
+			# Remove the roman numeral letter from the given roman numeral
+			rn = rn[len(rns[i]):]
+
+		# If given roman numeral doesn't start with letter
+		else:
+
+			# Increment the index by 1
+			i += 1
+
+	# Return the resulting number
+	return n
 
 
 class Tests (ut.TestCase):
