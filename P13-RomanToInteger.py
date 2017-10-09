@@ -10,7 +10,8 @@ import unittest as ut
 
 def main():
 	'''
-	return: None
+	rn: String -> Roman numeral
+	return: Integer -> Number represented by roman numeral
 	'''
 	# SOLUTION
 	pass
