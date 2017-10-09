@@ -11,3 +11,7 @@
 1. [String to Integer](https://leetcode.com/problems/string-to-integer-atoi)
 1. [Palindrome Number](https://leetcode.com/problems/palindrome-number)
 1. [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching)
+1. [Container with the Most Water](https://leetcode.com/problems/container-with-most-water)
+1. [Integer to Roman](https://leetcode.com/problems/integer-to-roman)
+1. [Roman to Integer](https://leetcode.com/problems/roman-to-integer)
+1. [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix)
