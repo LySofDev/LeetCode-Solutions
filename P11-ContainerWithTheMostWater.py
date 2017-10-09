@@ -52,6 +52,7 @@ def main(hs):
 	# Return maximum area
 	return ma
 
+
 class Tests (ut.TestCase):
 
 	def testA(self):
