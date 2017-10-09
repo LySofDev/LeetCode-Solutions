@@ -8,9 +8,10 @@ Note: You may not slant the container and n is at least 2.
 import unittest as ut
 
 
-def main():
+def main(hs):
 	'''
-	return: None
+	hs: Integer[] -> List of heights for lines
+	return: Integer -> Greatest possible area
 	'''
 	# SOLUTION
 	pass
