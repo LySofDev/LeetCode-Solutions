@@ -13,13 +13,14 @@ def main(n):
 	n: Integer -> Positive number to convert
 	return: String -> Roman numeral representing number
 	'''
-	# SOLUTION
-	pass
-
+	# If number less than 1 or greater than 3999
+	if n < 1 or n > 3999:
+		# Raise standard error with message
+		raise ValueError("Number out of range.")
 
 class Tests (ut.TestCase):
 
-	def testAll(self):
+	def testA(self):
 		numbers = [
 			1093, 282, 2471, 417, 3272, 477, 3643, 3771, 1019
 		]
@@ -31,6 +32,14 @@ class Tests (ut.TestCase):
 
 		for i in range(len(numbers)):
 			self.assertEqual(main(numbers[i]), romans[i])
+
+	def testB(self):
+		with self.assertRaises(ValueError):
+			main(-1)
+
+	def testC(self):
+		with self.assertRaises(ValueError):
+			main(4000)
 
 
 if __name__ == '__main__':
