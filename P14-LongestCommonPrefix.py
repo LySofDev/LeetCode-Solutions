@@ -6,9 +6,10 @@ Write a function to find the longest common prefix string amongst an array of st
 import unittest as ut
 
 
-def main():
+def main(ss):
 	'''
-	return: None
+	ss: String[] -> List of strings
+	return: String -> Longest common prefix
 	'''
 	# SOLUTION
 	pass
@@ -27,7 +28,7 @@ class Tests (ut.TestCase):
 		expected = "ru"
 		result = main(strings)
 		self.assertEqual(expected, result)
-		
+
 
 if __name__ == '__main__':
 	ut.main()
